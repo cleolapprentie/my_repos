@@ -11,6 +11,7 @@
 ## 練習技術
 - [GitHub v3 API](https://developer.github.com/v3/ "https://developer.github.com/v3/")
 - Vue.js
+- 無插件實現 Infinite Scroll & Parallax Scrolling
 - AJAX
 - Bootstrap 4
 
