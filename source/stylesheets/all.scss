@@ -1,12 +1,18 @@
 @import 'functions';
 @import 'mixins';
 @import 'base/variables';
-
 @import "root";
 @import "reboot";
+@import 'type';
 
+@import 'grid';
+@import 'forms';
+@import 'input-group';
+@import 'tables';
+@import 'card';
 @import 'buttons';
 @import 'badge';
+@import 'tooltip';
 @import 'utilities';
 
 @import 'style';

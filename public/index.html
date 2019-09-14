@@ -5,10 +5,68 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/stylesheets/all.css">
+    <script src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/all.css">
   </head>
   <body>
-    TEST
-    <a href="#" name="" id="" class="btn btn-primary" role="button">THIS IS A BUTTON</a>
+    <header class="hero">
+      <h1 class="f-montserrat display-4" style="margin-bottom: 5rem; cursor: pointer" onclick="window.location.reload()">Cleo's Repos</h1>
+      <div class="mb-5 hero-link">
+        <a href="https://kayahino.github.io/portfolio/"class="mr-3 hero-btn" target="_blank">Portfolio</a>
+        <a href="https://www.cakeresume.com/kaya-hino" class="hero-btn" target="_blank">CakeResume</a>
+      </div>
+      <div class="hero-bg"></div>
+    </header>
+    <div class="container mt-5">
+      <div class="table-responsive-md mt-4" id="app">
+        <h2 class="h5 text-center mb-3">輸入使用者名稱查詢</h2>
+        <div class="search-repos form-row justify-content-center mb-5">
+          <div class="input-group col-md-4">
+            <input type="text" class="form-control" aria-label="button-addon-pre" v-model.trim="username">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="button-addon" @click="search">Search</button>
+            </div>
+          </div>
+
+          <!-- <div class="form-inline">
+              <input type="text" class="form-control" id="username" v-model.trim="username">
+              <button type="button" class="btn btn-primary ml-2" @click="fetchApi">Search</button>
+          </div> -->
+        </div>
+        <table class="table table-hover">
+          <thead class="bg-primary">
+            <tr>
+              <th width="3%">#</th>
+              <th width="20%">Repository</th>
+              <th>Description</th>
+              <th width="15%" style="min-width: 120px">Created</th>
+              <th width="15%" style="min-width: 120px">Latest Update</th>
+              <th width="5%">Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template v-for="(repo, index) in repos">
+              <tr>
+                <td scope="row">{{index + 1}}</td>
+                <td>{{repo.name}}</td>
+                <td class="text-truncate" data-toggle="tooltip" :title="repo.description">
+                  {{checkContent(repo.description)}}</td>
+                <td>{{dateFormat(repo.created_at)}}</td>
+                <td>{{dateFormat(repo.updated_at)}}</td>
+                <td><a :href="repo.html_url" target="_blank">GO</a></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <footer class="mt-5 bg-secondary text-center d-flex align-items-center justify-content-center" style="height: 60px">
+      <p class="mb-0">查詢 GitHub Repo by <a href="https://kayahino.github.io/my_repos/public/index.html">CLEO</a></p>
+    </footer>
+
+    <script src="javascripts/vendor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="javascripts/script.js"></script>
   </body>
 </html>

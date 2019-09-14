@@ -1,3 +1,62 @@
 body {
-  color: red;
+  font-family: 'Noto Sans TC', sans-serif;
+  letter-spacing: 0.75px;
+  line-height: 1.7;
+  color: $dark;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.f-montserrat {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.2rem;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 400px;
+  color: rgba(#fff, 0.9);
+  background-image: linear-gradient(to bottom, rgba(#000, 0.2), rgba(#000, 0.7));
+  overflow: hidden;
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:  url('../images/hero_img.jpg');
+    background-position: center -250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: rgba(#fff, 0.9);
+  border: 1px solid #fff;
+  transition: all 0.4s ease;
+  &:hover {
+    background-color: #fff;
+    color: $dark;
+  }
+}
+
+.container {
+  min-height: calc(100vh - 400px - 3rem - 60px);
+}
+
+thead {
+  font-size: 0.8rem;
+}
+td {
+  max-width: 350px;
 }
