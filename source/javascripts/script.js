@@ -38,6 +38,8 @@ var app = new Vue({
               alert('資料讀取錯誤：' + data.message)
               self.error = true
               return
+            } else if (!data.length) {
+              self.next = false
             }
             self.switchUsername = false
             data.forEach(function(el) {
@@ -70,6 +72,7 @@ var app = new Vue({
         // infinite scroll
         if (window.innerHeight + window.scrollY + 1 >= document.body.scrollHeight) {
           if (vm.switchUsername || vm.repos.length === 0) { return }
+          if (!vm.next) { return }
           vm.page++
           vm.fetchApi()
         }

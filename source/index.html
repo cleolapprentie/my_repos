@@ -29,7 +29,7 @@
         <h2 class="h5 text-center mb-3">輸入使用者名稱查詢</h2>
         <div class="search-repos form-row justify-content-center mb-5">
           <div class="input-group col-md-4">
-            <input type="text" class="form-control" aria-label="button-addon-pre" v-model.trim="username">
+            <input type="text" class="form-control" aria-label="button-addon-pre" v-model.trim="username" @keyup.enter="search">
             <div class="input-group-append">
               <button class="btn btn-secondary" type="button" id="button-addon" @click="search">Search</button>
             </div>
