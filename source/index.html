@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
   <head>
-    <title>Cleo's Repos</title>
+    <title>GitHub Repos Finder</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +11,13 @@
   </head>
   <body>
     <header class="hero">
-      <h1 class="f-montserrat display-4" style="margin-bottom: 5rem; cursor: pointer" onclick="window.location.reload()">Cleo's Repos</h1>
+      <div class="text-center mb-5">
+        <i class="fab fa-github fa-5x"></i>
+        <h1 class="mt-3 f-montserrat display-3" style="cursor: pointer"
+          onclick="window.location.reload()">
+          Repos Finder
+        </h1>
+      </div>
       <div class="mb-5 hero-link">
         <a href="https://kayahino.github.io/portfolio/"class="mr-3 hero-btn" target="_blank">Portfolio</a>
         <a href="https://www.cakeresume.com/kaya-hino" class="hero-btn" target="_blank">CakeResume</a>
@@ -59,10 +65,12 @@
             </template>
           </tbody>
         </table>
+        <div v-show="loading" class="text-center loading">Loading...</div>
+        <div v-show="error" class="text-center">Failed to load data.</div>
       </div>
     </div>
-    <footer class="mt-5 bg-secondary text-center d-flex align-items-center justify-content-center" style="height: 60px">
-      <p class="mb-0">查詢 GitHub Repo by <a href="https://kayahino.github.io/my_repos/public/index.html">CLEO</a></p>
+    <footer class="mt-5 bg-secondary text-center py-3">
+      <p class="mb-0"><i class="fab fa-github"></i> GitHub Repos Finder by <a href="https://kayahino.github.io/my_repos/public/index.html">CLEO</a></p>
     </footer>
 
     <script src="javascripts/vendor.js"></script>

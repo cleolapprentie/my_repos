@@ -43,15 +43,11 @@ a:hover {
   padding: 0.5rem 1rem;
   color: rgba(#fff, 0.9);
   border: 1px solid #fff;
-  transition: all 0.4s ease;
+  transition: all 0.3s linear;
   &:hover {
     background-color: #fff;
     color: $dark;
   }
-}
-
-.container {
-  min-height: calc(100vh - 400px - 3rem - 60px);
 }
 
 thead {

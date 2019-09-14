@@ -5429,13 +5429,10 @@ a:hover {
   padding: 0.5rem 1rem;
   color: rgba(255, 255, 255, 0.9);
   border: 1px solid #fff;
-  transition: all 0.4s ease; }
+  transition: all 0.3s linear; }
   .hero-btn:hover {
     background-color: #fff;
     color: #394a51; }
-
-.container {
-  min-height: calc(100vh - 400px - 3rem - 60px); }
 
 thead {
   font-size: 0.8rem; }
