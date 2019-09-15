@@ -45,10 +45,13 @@ var app = new Vue({
             data.forEach(function(el) {
               self.repos.push(el)
             })
+            console.log('print')
           }, 500)
         })
         .then(() => {
-          $('[data-toggle="tooltip"]').tooltip();
+          setTimeout(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+          }, 500)
         })
         .catch(e => console.log("Oops, error", e))
     },
