@@ -28,6 +28,7 @@ var app = new Vue({
       fetch(getData).then(response => {
           if (response.status !== 200) {
             alert('Oops, something went wrong!')
+            self.error = true
           }
           return response.json()
         })
@@ -36,7 +37,6 @@ var app = new Vue({
             self.loading = false
             if (data.documentation_url === 'https://developer.github.com/v3/#rate-limiting') {
               alert('資料讀取錯誤：' + data.message)
-              self.error = true
               return
             } else if (!data.length) {
               self.next = false
